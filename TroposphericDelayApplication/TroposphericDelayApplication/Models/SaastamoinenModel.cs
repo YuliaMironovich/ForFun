@@ -5,22 +5,22 @@ namespace TroposphericDelayApplication.Models
 {
     public class SaastamoinenModel
     {
-        public StandartAtmosphere atmosphere;
+        public Atmosphere atmosphere;
         public double Latitude { get; private set; }
         public double Altitude { get; private set; }
 
         public SaastamoinenModel()
         {
-            atmosphere = new StandartAtmosphere();
+            atmosphere = new Atmosphere();
             Latitude = 53.90;
             Altitude = 0.281;
         }
 
-        public SaastamoinenModel(double latitude, double altitude)
+        public SaastamoinenModel(double latitude, double altitude, Atmosphere atmosphere)
         {
-            atmosphere = new StandartAtmosphere();
+            this.atmosphere = atmosphere;
             Latitude = latitude;
-            Altitude = altitude;
+            Altitude = altitude / 1000;
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace TroposphericDelayApplication.Models
 
         public override string ToString()
         {
-            return $"Saastamoinen model: {CalculateTroposphericDelay().ToString()}";
+            return CalculateTroposphericDelay().ToString();
         }
     }
 }

@@ -15,6 +15,11 @@ namespace TroposphericDelayApplication.Models
             Altitude = 281;
         }
 
+        public NeilModel(double altitude)
+        {
+            Altitude = altitude;
+        }
+
         /// <summary>
         /// Method calculate hidrostatic delay with parameters of atmosphere and reseiver position.
         /// </summary>
@@ -44,9 +49,7 @@ namespace TroposphericDelayApplication.Models
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("NeilModel: ").Append(" " + CalculateHidrostaticDelay()).Append(" " + CalculateWetDelay()).Append(" " + CalculateTroposphericDelay());
-            return sb.ToString();
+            return CalculateTroposphericDelay().ToString();
         }
     }
 }

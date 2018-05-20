@@ -8,14 +8,21 @@ namespace TroposphericDelayApplication.Models
 {
     public class HopfieldModel
     {
-        public StandartAtmosphere atmosphere;
+        public Atmosphere atmosphere;
         public double Altitude { get; private set; }
         public double Hd { get; private set; }
 
         public HopfieldModel()
         {
-            atmosphere = new StandartAtmosphere();
+            atmosphere = new Atmosphere();
             Altitude = 281;
+            Hd = 148.98 * (atmosphere.Temperature - 4.12) + Altitude;
+        }
+
+        public HopfieldModel(double altitude, Atmosphere atmosphere)
+        {
+            this.atmosphere = atmosphere;
+            Altitude = altitude;
             Hd = 148.98 * (atmosphere.Temperature - 4.12) + Altitude;
         }
 
@@ -49,9 +56,7 @@ namespace TroposphericDelayApplication.Models
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("HopfieldModel: ").Append(" " + CalculateHidrostaticDelay()).Append(" " + CalculateWetDelay()).Append(" " + CalculateTroposphericDelay());
-            return sb.ToString();
+            return CalculateTroposphericDelay().ToString();
         }
     }
 }

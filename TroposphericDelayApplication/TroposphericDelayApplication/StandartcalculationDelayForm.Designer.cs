@@ -62,12 +62,11 @@
             // 
             // DelayTextBox
             // 
-            this.DelayTextBox.Location = new System.Drawing.Point(119, 154);
+            this.DelayTextBox.Location = new System.Drawing.Point(131, 154);
             this.DelayTextBox.Name = "DelayTextBox";
             this.DelayTextBox.Size = new System.Drawing.Size(193, 76);
             this.DelayTextBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.DelayTextBox.TabIndex = 17;
-            this.DelayTextBox.Click += new System.EventHandler(this.DelayTextBox_Click);
             // 
             // delayLabel
             // 
@@ -85,17 +84,16 @@
             this.AltitudeLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.AltitudeLabel.Location = new System.Drawing.Point(21, 119);
             this.AltitudeLabel.Name = "AltitudeLabel";
-            this.AltitudeLabel.Size = new System.Drawing.Size(74, 25);
+            this.AltitudeLabel.Size = new System.Drawing.Size(104, 25);
             this.AltitudeLabel.TabIndex = 15;
-            this.AltitudeLabel.Text = "Altitude:";
+            this.AltitudeLabel.Text = "Altitude (m):";
             // 
             // AltitudeTextBox
             // 
-            this.AltitudeTextBox.Location = new System.Drawing.Point(119, 119);
+            this.AltitudeTextBox.Location = new System.Drawing.Point(131, 119);
             this.AltitudeTextBox.Name = "AltitudeTextBox";
             this.AltitudeTextBox.Size = new System.Drawing.Size(193, 29);
             this.AltitudeTextBox.TabIndex = 14;
-            this.AltitudeTextBox.Click += new System.EventHandler(this.AltitudeTextBox_Click);
             // 
             // latitudeLabel
             // 
@@ -103,17 +101,16 @@
             this.latitudeLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.latitudeLabel.Location = new System.Drawing.Point(21, 84);
             this.latitudeLabel.Name = "latitudeLabel";
-            this.latitudeLabel.Size = new System.Drawing.Size(76, 25);
+            this.latitudeLabel.Size = new System.Drawing.Size(98, 25);
             this.latitudeLabel.TabIndex = 13;
-            this.latitudeLabel.Text = "Latitude:";
+            this.latitudeLabel.Text = "Latitude (°):";
             // 
             // LatitudeTextBox
             // 
-            this.LatitudeTextBox.Location = new System.Drawing.Point(119, 84);
+            this.LatitudeTextBox.Location = new System.Drawing.Point(131, 84);
             this.LatitudeTextBox.Name = "LatitudeTextBox";
             this.LatitudeTextBox.Size = new System.Drawing.Size(193, 29);
             this.LatitudeTextBox.TabIndex = 12;
-            this.LatitudeTextBox.Click += new System.EventHandler(this.LatitudeTextBox_Click);
             // 
             // StandartCalculationDelayForm
             // 

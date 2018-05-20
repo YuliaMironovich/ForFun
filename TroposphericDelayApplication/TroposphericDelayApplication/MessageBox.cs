@@ -14,10 +14,5 @@ namespace TroposphericDelayApplication
         {
 
         }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

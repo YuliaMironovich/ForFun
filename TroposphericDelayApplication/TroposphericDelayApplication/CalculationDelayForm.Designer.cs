@@ -45,7 +45,6 @@
             this.LatitudeTextBox.Name = "LatitudeTextBox";
             this.LatitudeTextBox.Size = new System.Drawing.Size(193, 29);
             this.LatitudeTextBox.TabIndex = 1;
-            this.LatitudeTextBox.Click += new System.EventHandler(this.LatitudeTextBox_Click);
             // 
             // latitudeLabel
             // 
@@ -73,7 +72,6 @@
             this.LongitudeTextBox.Name = "LongitudeTextBox";
             this.LongitudeTextBox.Size = new System.Drawing.Size(193, 29);
             this.LongitudeTextBox.TabIndex = 5;
-            this.LongitudeTextBox.Click += new System.EventHandler(this.LongitudeTextBox_Click);
             // 
             // delayLabel
             // 

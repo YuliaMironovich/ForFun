@@ -1,6 +1,6 @@
 ﻿namespace TroposphericDelayApplication
 {
-    partial class MessageBox
+    partial class BadRequestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,21 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(14, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(9, 60);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(187, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Input correct values in all fields";
+            this.metroLabel1.Size = new System.Drawing.Size(192, 38);
+            this.metroLabel1.TabIndex = 1;
+            this.metroLabel1.Text = "Bad request. \r\nCheck your internet connection.";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MessageBox
+            // BadRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(209, 161);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "MessageBox";
+            this.Name = "BadRequestForm";
             this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Load += new System.EventHandler(this.MessageBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +57,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
+
     }
 }

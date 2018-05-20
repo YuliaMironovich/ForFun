@@ -65,17 +65,31 @@
     <Compile Include="AlgorithmChoiceForm.Designer.cs">
       <DependentUpon>AlgorithmChoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Api\Client.cs" />
+    <Compile Include="Api\Parameters.cs" />
+    <Compile Include="BadRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BadRequestForm.Designer.cs">
+      <DependentUpon>BadRequestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalculationDelayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CalculationDelayForm.Designer.cs">
       <DependentUpon>CalculationDelayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox.Designer.cs">
+      <DependentUpon>MessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BlackModel.cs" />
     <Compile Include="Models\HopfieldModel.cs" />
     <Compile Include="Models\NeilModel.cs" />
     <Compile Include="Models\SaastamoinenModel.cs" />
-    <Compile Include="Models\StandartAtmosphere.cs" />
+    <Compile Include="Models\Atmosphere.cs" />
     <Compile Include="StandartCalculationDelayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +107,14 @@
     <EmbeddedResource Include="AlgorithmChoiceForm.resx">
       <DependentUpon>AlgorithmChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BadRequestForm.resx">
+      <DependentUpon>BadRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalculationDelayForm.resx">
       <DependentUpon>CalculationDelayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox.resx">
+      <DependentUpon>MessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StandartCalculationDelayForm.resx">
       <DependentUpon>StandartCalculationDelayForm.cs</DependentUpon>

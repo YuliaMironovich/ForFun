@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TroposphericDelayApplication.Models
 {
-    public class StandartAtmosphere
+    public class Atmosphere
     {
         /// Default correction factor value. 
         public const double CORRECTION_FACTOR = 1.0;
@@ -43,7 +43,7 @@ namespace TroposphericDelayApplication.Models
         /// <summary>
         /// Create new standart instance of atmosphere.
         /// </summary>
-        public StandartAtmosphere()
+        public Atmosphere()
         {
             Temperature = STANDARD_TEMPERATURE;
             Pressure = STANDARD_PRESSURE;
@@ -57,11 +57,13 @@ namespace TroposphericDelayApplication.Models
         /// </summary>
         /// <param name="pressure">Pressure of atmosphere</param>
         /// <param name="temperature">Temperature of atmosphere</param>
-        public StandartAtmosphere(double pressure, double temperature)
+        public Atmosphere(double pressure, double temperature, double humidity)
         {
             Pressure = pressure;
             Temperature = temperature;
             CoefficientRefraction = (pressure / PRESSURE) * (TEMPERATURE / temperature);
+            Humidity = humidity;
+            PartialPressure = STANDARD_PARTIAL_PRESSURE;
         }
 
         /// <summary>

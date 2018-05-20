@@ -5,13 +5,19 @@ namespace TroposphericDelayApplication.Models
 {
     public class BlackModel
     {
-        public StandartAtmosphere atmosphere;
+        public Atmosphere atmosphere;
         public double Altitude { get; private set; }
 
         public BlackModel()
         {
-            atmosphere = new StandartAtmosphere();
+            atmosphere = new Atmosphere();
             Altitude = 281;
+        }
+
+        public BlackModel(double altitude, Atmosphere atmosphere)
+        {
+            this.atmosphere = atmosphere;
+            Altitude = altitude;
         }
 
         /// <summary>
@@ -43,9 +49,7 @@ namespace TroposphericDelayApplication.Models
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("BlackModel: ").Append(" " + CalculateHidrostaticDelay()).Append(" " + CalculateWetDelay()).Append(" " + CalculateTroposphericDelay());
-            return sb.ToString();
+            return CalculateTroposphericDelay().ToString();
         }
     }
 }

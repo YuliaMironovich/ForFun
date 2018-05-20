@@ -1,5 +1,6 @@
 ﻿using System;
 using MetroFramework.Forms;
+using TroposphericDelayApplication.Models;
 
 namespace TroposphericDelayApplication
 {
@@ -14,37 +15,55 @@ namespace TroposphericDelayApplication
 
         private void StandartCalculationDelayForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void CalculateTile_Click(object sender, EventArgs e)
         {
-            double value;
-            MetroFramework.Controls.MetroUserControl sdsdsd = new MetroFramework.Controls.MetroUserControl();
-            if(AltitudeTextBox.Text == String.Empty || LatitudeTextBox.Text == String.Empty || Double.TryParse(AltitudeTextBox.Text, out value) || Double.TryParse(LatitudeTextBox.Text, out value))
+            if(AltitudeTextBox.Text == String.Empty || LatitudeTextBox.Text == String.Empty)
             {
                 MessageBox messageBox = new MessageBox();
                 messageBox.Show();
             }
             else
             {
+                try
+                {
+                    Atmosphere atmosphere = new Atmosphere();
+                    string delay = String.Empty;
+                    string altstring = AltitudeTextBox.Text;
+                    double altitude = Convert.ToDouble(altstring.Replace(".", ","));
+                    string latstring = LatitudeTextBox.Text;
+                    double latitude = Convert.ToDouble(latstring.Replace(".", ","));
+                    if (choiceForm.RadioButton == "saastamoinen")
+                    {
+                        SaastamoinenModel saastamoinenModel = new SaastamoinenModel(latitude, altitude, atmosphere);
+                        delay = saastamoinenModel.ToString();
 
+                    }
+                    if (choiceForm.RadioButton == "neil")
+                    {
+                        NeilModel neilModel = new NeilModel(altitude);
+                        delay = neilModel.ToString();
+                    }
+                    if (choiceForm.RadioButton == "hopfield")
+                    {
+                        HopfieldModel hopfieldModel = new HopfieldModel(altitude, atmosphere);
+                        delay = hopfieldModel.ToString();
+                    }
+                    if (choiceForm.RadioButton == "black")
+                    {
+                        BlackModel blackModel = new BlackModel(altitude, atmosphere);
+                        delay = blackModel.ToString();
+                    }
+                    DelayTextBox.Text = delay;
+                }
+                catch
+                {
+                    MessageBox messageBox = new MessageBox();
+                    messageBox.Show();
+                }
+              
             }
-        }
-
-        private void AltitudeTextBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LatitudeTextBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DelayTextBox_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BackTile_Click(object sender, EventArgs e)
